@@ -14,9 +14,11 @@ app = Flask(__name__)
 chrome_options = Options()
 chrome_options.add_argument("--headless=new")  # Run in headless mode
 chrome_options.page_load_strategy = 'eager'
-chrome_options.add_experimental_option("detach", True)  # Optional: Keep Chrome open if not headless
-user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36"
-chrome_options.add_argument(f"user-agent={user_agent}")
+chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--disable-dev-shm-usage")
+# chrome_options.add_experimental_option("detach", True)  # Optional: Keep Chrome open if not headless
+# user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36"
+# chrome_options.add_argument(f"user-agent={user_agent}")
 
 def scrape_leetcode_profile(url):
     # Initialize the WebDriver using WebDriver Manager

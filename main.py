@@ -114,6 +114,9 @@ def scrape_leetcode_profile(url):
     # Return the profile data as a JSON object
     return profile_data
 
+@app.route('/', methods=['GET'])
+def home():
+    return 'Welcome'
 @app.route('/scrape', methods=['GET'])
 def scrape_profile():
     # Get URL from the request arguments

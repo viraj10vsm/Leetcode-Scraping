@@ -11,7 +11,7 @@ import time
 app = Flask(__name__)
 
 # Define the path to the Chrome WebDriver
-web_driver = "C:/Users/viraj/OneDrive/Python/Other downloads/chromedriver-win64/chromedriver.exe"
+# web_driver = "C:/Users/viraj/OneDrive/Python/Other downloads/chromedriver-win64/chromedriver.exe"
 
 # Set up Chrome options
 chrome_option = webdriver.ChromeOptions()
@@ -24,8 +24,8 @@ chrome_option.add_argument(f"user-agent={user_agent}")
 
 def scrape_leetcode_profile(url):
     # Initialize the WebDriver
-    ser = Service(executable_path=web_driver)
-    driver = webdriver.Chrome(service=ser, options=chrome_option)
+    # ser = Service(executable_path=web_driver)
+    driver = webdriver.Chrome(options=chrome_option)
     driver.get(url)
     time.sleep(4)
         # Wait for the page to load completely
